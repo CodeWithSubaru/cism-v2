@@ -53,6 +53,7 @@ export default function Projects() {
       <div className="sm:columns-2 md:columns-3 space-y-4">
         {projects.map((project) => (
           <Image
+            key={project.id}
             height={300}
             width={300}
             src={project.src}
