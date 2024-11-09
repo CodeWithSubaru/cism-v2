@@ -105,7 +105,10 @@ export default function Home() {
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger className="inline-flex">
-              <a href="pdf">
+              <a
+                target="_blank"
+                href="./pdf/Francis Cloyd V. Mag-isa_Resume-Frontend_Developer.pdf"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
