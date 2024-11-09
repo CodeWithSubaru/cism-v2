@@ -49,7 +49,6 @@ export default function Projects() {
       <h1 className="text-2xl font-extrabold mb-4">
         Here are some of my projects:
       </h1>
-
       <div className="sm:columns-2 md:columns-3 space-y-4">
         {projects.map((project) => (
           <Image

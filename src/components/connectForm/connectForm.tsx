@@ -68,97 +68,126 @@ function ConnectForm() {
     }
   }
 
+  const { isDirty, isValid } = form.formState;
+
   return (
-    <div className="flex-1 max-w-[500px] mx-10 sm:mx-10 sm:p-10 sm:border border-gray-700 rounded-3xl">
-      <h3 className="text-2xl mb-5">Connect with me</h3>
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-          <FormField
-            control={form.control}
-            name="subject"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-gray-500" htmlFor="subject">
-                  Subject
-                </FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder="Your Subject Here..."
-                    id="subject"
-                    {...field}
-                  />
-                </FormControl>
-                <FormDescription>Please put your subject here.</FormDescription>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="name"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-gray-500" htmlFor="name">
-                  Fulll Name
-                </FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder="Your Full Name Here..."
-                    id="name"
-                    {...field}
-                  />
-                </FormControl>
-                <FormDescription>
-                  Please put your Full Name here.
-                </FormDescription>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-gray-500" htmlFor="email">
-                  Your Email Address
-                </FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder="Your Email Here..."
-                    id="email"
-                    {...field}
-                  />
-                </FormControl>
-                <FormDescription>Please put your email here.</FormDescription>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="message"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-gray-500">Your Message</FormLabel>
-                <FormControl>
-                  <Textarea
-                    placeholder="Your Message Here..."
-                    id="email"
-                    {...field}
-                  />
-                </FormControl>
-                <FormDescription>Connect by messaging me here.</FormDescription>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <Button type="submit" className="py-3 h-full w-full">
-            {isLoading ? "Submitting..." : "Submit"}
-          </Button>
-        </form>
-      </Form>
-    </div>
+    <>
+      <div className="absolute inset-0 bg-fuchsia-400 bg-[size:1.25rem_1.25rem] opacity-20 blur-[6.25rem] -z-10"></div>
+      <div className="flex-1 max-w-[31.25rem] mx-10 sm:mx-10 sm:p-10 sm:border border-gray-700 rounded-3xl">
+        <h3 className="text-2xl mb-5">Connect with me</h3>
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+            <FormField
+              control={form.control}
+              name="subject"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel
+                    className="text-gray-500 flex justify-between"
+                    htmlFor="subject"
+                  >
+                    <span>Subject</span>
+                    <div className="group relative flex flex-col">
+                      <span className="relative self-end inline-flex justify-center items-center w-4 h-4 font-bold text-xs border border-neutral-300 rounded-full">
+                        ?
+                      </span>
+                      <div className="group-hover:flex hidden absolute -top-3 right-0 -translate-y-full py-2 px-3 mb-2 w-48 leading-6 text-gray-500 bg-black border border-neutral-400 rounded-md">
+                        Please provide the subject of your concern, similar to
+                        other email services (e.g., &ldquo;Recruitment
+                        Purposes&rdquo;).
+                      </div>
+                    </div>
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Your Subject Here..."
+                      id="subject"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormDescription>
+                    Please put your subject here.
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-gray-500" htmlFor="name">
+                    Fulll Name
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Your Full Name Here..."
+                      id="name"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormDescription>
+                    Please put your Full Name here.
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-gray-500" htmlFor="email">
+                    Your Email Address
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Your Email Here..."
+                      id="email"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormDescription>Please put your email here.</FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="message"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-gray-500">Your Message</FormLabel>
+                  <FormControl>
+                    <Textarea
+                      placeholder="Your Message Here..."
+                      id="email"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormDescription>
+                    Connect by messaging me here.
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <Button
+              type="submit"
+              className={
+                (!isDirty || !isValid
+                  ? "cursor-pointer"
+                  : "cursor-not-allowed") + "py-3 h-full w-full"
+              }
+            >
+              {isLoading ? "Submitting..." : "Submit"}
+            </Button>
+          </form>
+        </Form>
+      </div>
+    </>
   );
 }
 

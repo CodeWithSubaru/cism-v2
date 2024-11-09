@@ -17,12 +17,12 @@ export default function Home() {
   const currentYear = 2024;
   return (
     <>
-      <div className="absolute inset-0 bg-fuchsia-400 bg-[size:20px_20px] opacity-20 blur-[100px]"></div>
+      <div className="absolute inset-0 bg-fuchsia-400 bg-[size:1.25rem_1.25rem] opacity-20 blur-[6.25rem]"></div>
       <div className="social-links">
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger className="inline-flex">
-              <a href="facebook.com">
+              <a target="_blank" href="https://facebook.com/francis.cloyd9">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -48,7 +48,7 @@ export default function Home() {
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger className="inline-flex">
-              <a href="github.com">
+              <a target="_blank" href="https://github.com/CodeWithSubaru">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -74,7 +74,10 @@ export default function Home() {
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger className="inline-flex">
-              <a href="linkenid">
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/franciscloydm/"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -196,7 +199,7 @@ export default function Home() {
           className="grid grid-cols-1 md:grid-cols-2 gap-y-0 md:gap-y-10 grid-rows-[repeat(3, fit-content)] px-10 mb-10"
         >
           <div className="static lg:relative lg:self-end left-28 z-20 inline-flex justify-center md:justify-start items-center text-center md:text-left">
-            <h2 className="font-bold text-5xl md:text-7xl xl:text-8xl">
+            <h2 className="font-bold text-3xl md:text-7xl xl:text-8xl">
               <span>Really</span>
               <span className="text-red-400 mx-2 inline-block text-nowrap">
                 L<span className="-mx-1 md:-mx-2">💖</span>ve
@@ -212,33 +215,33 @@ export default function Home() {
           <div className="flex justify-around flex-nowrap gap-y-0 md:gap-y-4 text-center md:text-left gap-x-2 md:grid grid-cols-subgrid static lg:relative left-28 row-start-2 z-10">
             <a
               href=""
-              className="active flex-1 flex py-2 h-fit md:h-full justify-center md:justify-between"
+              className="active flex justify-center md:justify-between text-sm md:text-3xl font-bold py-2 h-fit md:h-full "
             >
-              <span> Journey</span>
+              <span className="self-center"> Journey</span>
               <SquareArrowOutUpRight className="hidden md:inline-block" />
             </a>
             <Link
               href="/projects"
-              className="flex-1 flex py-2 h-fit md:h-full gap-y-0 md:gap-y-4 justify-center md:justify-between"
+              className="flex-1 flex  justify-center md:justify-between text-sm md:text-3xl font-bold py-2 h-fit md:h-full gap-y-0 md:gap-y-4"
             >
-              <span>Projects</span>
+              <span className="self-center">Projects</span>
               <SquareArrowOutUpRight className="hidden md:inline-block" />
             </Link>
             <Link
               href="/blog"
-              className="flex-1 flex py-2 h-fit md:h-full gap-y-0 md:gap-y-4 justify-center md:justify-between"
+              className="flex-1 flex justify-center md:justify-between text-sm md:text-3xl font-bold py-2 h-fit md:h-full gap-y-0 md:gap-y-4"
             >
-              <span>Blog</span>
+              <span className="self-center">Blog</span>
               <SquareArrowOutUpRight className="hidden md:inline-block" />
             </Link>
           </div>
 
-          <div className="hover:z-20 row-span-2 self-start md:self-center h-[250px] order-1 md:h-[400px] mb-5">
+          <div className="hover:z-20 row-span-2 self-start md:self-center h-[15.625rem] order-1 md:h-[25rem] mb-5">
             <Journeys />
           </div>
         </section>
 
-        <article id="connect" className="mb-10 flex justify-center">
+        <article id="connect" className="relative mb-10 flex justify-center">
           <ConnectForm />
         </article>
 
