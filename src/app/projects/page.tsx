@@ -43,7 +43,7 @@ const projects: Project[] = [
       code: "https://github.com/CodeWithSubaru/style-component/tree/advice-app",
     },
     biggestProj: false,
-    favorite: true,
+    favorite: false,
   },
   {
     id: 2,
@@ -237,7 +237,7 @@ const projects: Project[] = [
       demo: "https://construction-website-seven.vercel.app/",
       code: "https://github.com/CodeWithSubaru/construction-website",
     },
-    biggestProj: false,
+    biggestProj: true,
     favorite: true,
   },
   {
@@ -264,7 +264,7 @@ const projects: Project[] = [
       code: "https://github.com/CodeWithSubaru/cism",
     },
     biggestProj: true,
-    favorite: true,
+    favorite: false,
   },
   {
     id: 19,
@@ -322,7 +322,10 @@ export default function Projects() {
         </h1>
       </div>
       <div className="feature-projects">
-        <h2 className="text-xl text-gray-300 mb-5">Favorite Projects</h2>
+        <h2 className="text-xl text-gray-300">Favorite Projects</h2>
+        <p className="text-sm text-gray-400 mb-5">
+          My Most Favorite projects I&apos;ve ever built
+        </p>
         <div className="sm:columns-2 md:columns-3 space-y-4">
           {favorites.map((project) => (
             <div
@@ -378,7 +381,10 @@ export default function Projects() {
       </div>
 
       <div className="biggest-project">
-        <h2 className="text-xl text-gray-300 mb-5">Biggest Project</h2>
+        <h2 className="text-xl text-gray-300">Biggest Project</h2>
+        <p className="text-sm text-gray-400 mb-5">
+          My Most Biggest projects I&apos;ve ever built
+        </p>
         <div className="sm:columns-2 md:columns-3 space-y-4">
           {biggestProjects.map((project) => (
             <div
@@ -434,7 +440,10 @@ export default function Projects() {
       </div>
 
       <div className="other-projects">
-        <h2 className="text-xl text-gray-300 mb-5">Other Project</h2>
+        <h2 className="text-xl text-gray-300">Other Project</h2>
+        <p className="text-sm text-gray-400 mb-5">
+          My Other projects I&apos;ve built
+        </p>
         <div className="sm:columns-2 md:columns-3 space-y-4">
           {projects.map((project) => {
             const randomHeight = randomizerHeightClassName();
