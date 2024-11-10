@@ -214,14 +214,81 @@ const projects: Project[] = [
     biggestProj: false,
     favorite: false,
   },
+  {
+    id: 15,
+    name: "Mind Games",
+    desc: "This is Mini Games I built to learn typescript and state management such as zustand",
+    src: `${parentFolder}/mind-quest.png`,
+    alt: "mind-quest",
+    href: {
+      demo: "https://mind-quest.vercel.app/",
+      code: "https://github.com/CodeWithSubaru/mind-quest.git",
+    },
+    biggestProj: true,
+    favorite: true,
+  },
+  {
+    id: 16,
+    name: "Construction Website",
+    desc: "I built it because it was good design and I want to create my own of this website",
+    src: `${parentFolder}/construction-website.png`,
+    alt: "construction website",
+    href: {
+      demo: "https://construction-website-seven.vercel.app/",
+      code: "https://github.com/CodeWithSubaru/construction-website",
+    },
+    biggestProj: false,
+    favorite: true,
+  },
+  {
+    id: 17,
+    name: "Pickle Website",
+    desc: "I was inspired on how it was design, so I re-create my own",
+    src: `${parentFolder}/pickle-site.png`,
+    alt: "pickle website",
+    href: {
+      demo: "https://pickle-site.vercel.app/",
+      code: "https://github.com/CodeWithSubaru/voting-site",
+    },
+    biggestProj: false,
+    favorite: true,
+  },
+  {
+    id: 18,
+    name: "Portfolio - Cism",
+    desc: "I was amazed how powerful Astro was and I grab this opportunity to create my portfolio",
+    src: `${parentFolder}/portfolio-cism.png`,
+    alt: "portfolio cism",
+    href: {
+      demo: "https://cism.vercel.app/",
+      code: "https://github.com/CodeWithSubaru/cism",
+    },
+    biggestProj: true,
+    favorite: true,
+  },
+  {
+    id: 19,
+    name: "Space Tour",
+    desc: "Frontend mentor challenge that makes me excite and I like it on how i achieve the same design. It was very challenging and awesome to create.",
+    src: `${parentFolder}/space-tour.png`,
+    alt: "space tour",
+    href: {
+      demo: "https://space-tour-by-francis.vercel.app/",
+      code: "https://github.com/CodeWithSubaru/space-tour",
+    },
+    biggestProj: true,
+    favorite: true,
+  },
 ];
 
 const favorites = projects.filter((project) => project.favorite);
 
 const biggestProjects = projects.filter((project) => project.biggestProj);
 
+const MAX_CHAR = 150;
+
 const adjustHeight = (project: Project, height: string) =>
-  (project.desc.length > 100 && height === "h-[200px]") ||
+  (project.desc.length > MAX_CHAR && height === "h-[200px]") ||
   randomizerHeightClassName() === "h-[250px]"
     ? "h-[100px]"
     : "h-auto";
