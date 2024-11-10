@@ -24,6 +24,21 @@ select:-webkit-autofill:focus {
   -webkit-text-fill-color: black;
 }
 
+::-webkit-scrollbar {
+  width: 0.625rem;
+  background-color: rgb(55 65 81 / var(--tw-border-opacity));
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(232 121 249 / var(--tw-bg-opacity));
+  border-radius: 20px;
+}
+
 @layer base {
   body {
     @apply absolute z-20 h-full w-full bg-black bg-gradient-to-t from-[#ffffff1f] to-[#00091d] bg-[20px_20px] text-white overflow-x-hidden;
